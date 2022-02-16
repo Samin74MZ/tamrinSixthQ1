@@ -11,21 +11,23 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button3"
+            android:id="@+id/buttonShowInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:onClick="clickButtonInfo"
             android:text="Show Info"
             app:cornerRadius="45dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline4"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button2"
+            android:id="@+id/buttonHideInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:onClick="clickButtonInfo"
             android:text="Hide Info"
             app:backgroundTint="#FF30E3"
             app:cornerRadius="45dp"
@@ -86,7 +88,7 @@
             app:layout_constraintGuide_begin="349dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/editTextTextUserName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -111,7 +113,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline4"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextUserName" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -145,6 +147,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:onClick="setInfo"
             android:text="Female"
             app:layout_constraintBottom_toBottomOf="@+id/radioButton2"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -157,15 +160,17 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="16dp"
+            android:onClick="setInfo"
             android:text="Male"
             app:layout_constraintStart_toEndOf="@+id/radioButton"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button"
+            android:id="@+id/buttonRegister"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:onClick="setInfo"
             android:text="Register"
             app:backgroundTint="#EA1E64"
             app:cornerRadius="45dp"
@@ -181,15 +186,15 @@
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="1dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/buttonHideInfo"
             app:layout_constraintEnd_toEndOf="@id/guideline4"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/buttonShowInfo"
             android:outlineSpotShadowColor="@color/ockre">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewFullName"
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_marginLeft="10dp"
@@ -201,7 +206,7 @@
                 android:textColor="#1A237E" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textViewUserName"
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_marginBottom="10dp"
@@ -212,7 +217,7 @@
                 android:textColor="#1A237E" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textViewEmail"
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_marginBottom="10dp"
@@ -223,7 +228,7 @@
                 android:textColor="#1A237E" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textViewPassword"
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_marginBottom="10dp"
@@ -234,7 +239,7 @@
                 android:textColor="#1A237E" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textViewGender"
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 android:layout_marginBottom="10dp"
