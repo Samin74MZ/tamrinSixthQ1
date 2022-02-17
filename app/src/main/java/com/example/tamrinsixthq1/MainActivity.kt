@@ -28,14 +28,6 @@ class MainActivity : AppCompatActivity() {
     }
 
      fun setInfo(view: View){
-         if (view is RadioButton){
-             if (checkGender(view,"Female")){
-                 setResultOfGender("Female")
-             }
-             if (checkGender(view,"Male")){
-                 setResultOfGender("Male")
-             }
-         }
          sharedPreferences=getSharedPreferences(fileName,0)
          var editor=sharedPreferences.edit()
          editor.putString("FullName",binding.editTextTextPersonName.text.toString())
@@ -43,6 +35,7 @@ class MainActivity : AppCompatActivity() {
          editor.putString("Email",binding.editTextTextEmailAddress.text.toString())
          editor.putString("Password",binding.editTextTextPassword2.text.toString())
          editor.putString("Gender",binding.textViewGender.text.toString())
+         editor.putBoolean("buGender", binding.radioButton.isChecked())
          editor.commit()
          Toast.makeText(this,"Info Saved",Toast.LENGTH_SHORT).show()
     }
@@ -54,6 +47,11 @@ class MainActivity : AppCompatActivity() {
             binding.textViewEmail.text=sharedPreferences.getString("Email","")
             binding.textViewPassword.text=sharedPreferences.getString("Password","")
             binding.textViewGender.text=sharedPreferences.getString("Gender","")
+            if (sharedPreferences.getBoolean("buGender",true)){
+                binding.textViewGender.text="Female"
+            }else{
+                binding.textViewGender.text="Male"
+            }
             binding.textViewFullName.isVisible=true
             binding.textViewUserName.isVisible=true
             binding.textViewEmail.isVisible=true
@@ -70,11 +68,4 @@ class MainActivity : AppCompatActivity() {
             binding.buttonHideInfo.isVisible=false
         }
     }
-    private fun setResultOfGender(gender:String){
-        binding.textViewGender.text=gender
-    }
-    private fun getGender():String{
-        return ""
-    }
-     fun checkGender(radioButton: RadioButton,s:String):Boolean =radioButton.text==s
 }
