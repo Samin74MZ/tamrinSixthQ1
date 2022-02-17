@@ -54,8 +54,21 @@ class MainActivity : AppCompatActivity() {
             binding.textViewEmail.text=sharedPreferences.getString("Email","")
             binding.textViewPassword.text=sharedPreferences.getString("Password","")
             binding.textViewGender.text=sharedPreferences.getString("Gender","")
+            binding.textViewFullName.isVisible=true
+            binding.textViewUserName.isVisible=true
+            binding.textViewEmail.isVisible=true
+            binding.textViewPassword.isVisible=true
+            binding.textViewGender.isVisible=true
+            binding.buttonHideInfo.isVisible=true
         }
-        if (view==binding.buttonHideInfo){}
+        if (view==binding.buttonHideInfo){
+            binding.textViewFullName.isVisible=false
+            binding.textViewUserName.isVisible=false
+            binding.textViewEmail.isVisible=false
+            binding.textViewPassword.isVisible=false
+            binding.textViewGender.isVisible=false
+            binding.buttonHideInfo.isVisible=false
+        }
     }
     private fun setResultOfGender(gender:String){
         binding.textViewGender.text=gender
